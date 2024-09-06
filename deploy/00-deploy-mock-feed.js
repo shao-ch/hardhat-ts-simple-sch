@@ -1,15 +1,28 @@
-const env=require("hardhat");
+const {network} = require("hardhat");
 
-module.exports=async ({deployments,getNamedAccounts})=>{
-    const {deploy,log}=deployments;
+const {networkConfig}=require("../helper-hardhat-config");
 
-    const {deployer}= await getNamedAccounts();
+module.exports = async ({deployments, getNamedAccounts,ethers}) => {
+    const {deploy, log} = deployments;
 
-    deploy.deploy("MockV3Aggregator",{
-        from:deployer,
+    const {deployer} = await getNamedAccounts();
+
+
+    const chainId=network.config.chainId;
+    log(chainId);
+    const ethUsdPriceFeedAddress =networkConfig[chainId].ethUsdPriceFeed;
+    const mock =await deploy("MockV3Aggregator", {
+        contract: "MockV3Aggregator",
+        from: ethUsdPriceFeedAddress,
         /*这里的8,代表单位，代表扩大了多少倍，后面表示price*/
-        args:[8,200000000000],
-        log:true
+        args: [8, 200000000000],
+        log: true
     });
-    log(deployer);
+    log(mock.address);
+    const mockV3= await deployments.get("MockV3Aggregator");
+    log(mockV3.address);
+    log("Mock deployed...");
+
 }
+
+module.exports.tags = ["all","mocks"];
