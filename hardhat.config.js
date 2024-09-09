@@ -18,6 +18,22 @@ module.exports = {
         }
     },
 
+    /*这个是verify认证需要的api*/
+    // etherscan: {
+    //     apiKey: process.env.ETHERS_API_HARDHAT_KEY,
+    // },
+
+    /*这个是打印gas 花费的报告的*/
+    // gasReporter: {
+    //     enabled: true,
+    //     currency: "USD",
+    //     noColors: true,
+    //     coinmarketcap: "30163af0-9406-4a93-85a2-627fde719a5a",
+    //     L1Etherscan: process.env.ETHERS_API_HARDHAT_KEY,
+    //     // outputFile:"./gas_reporter.txt",
+    //     offline: true
+    // },
+
     namedAccounts: {
         deployer: {
             default: 0,

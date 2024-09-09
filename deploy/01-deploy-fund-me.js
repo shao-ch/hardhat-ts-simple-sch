@@ -1,32 +1,44 @@
-// function deployFunc(){
-//     console.log("Hi~~");
-// }
-
-
-// module.exports.default= deployFunc;
-// module.exports=async (hre)=>{
-//     console.log(hre);
-//     const {getNamedAccounts,deployments}=hre;
-// }
-
 const {network} = require("hardhat");
-module.exports = async ({deployments,getNamedAccounts}) => {
-    const {deploy, log} = deployments;
+const {networkConfig,NETWORK_NAME} = require("../helper-hardhat-config");
+const {verify} = require("../utils/Vertify");
+
+module.exports = async ({deployments, getNamedAccounts}) => {
+    const {deploy, log, get} = deployments;
     const {user} = await getNamedAccounts();
 
-    const {address} = await deployments.get("MockV3Aggregator");
 
-    // const chainId =network.config.chainId;
-   const fundMeFactory=await deploy("FundMe",{
-        contract:"FundMe",
-        from:user,
-        log:true,
-        args:[address],
+    const chainId = network.config.chainId;
+    let _address;
+    if (networkConfig[chainId] && NETWORK_NAME.includes(networkConfig[chainId].name)) {
+        const aggregatorV3 = await deployments.get("MockV3Aggregator");
+        _address = aggregatorV3.address;
+    } else {
+        _address = networkConfig[chainId].ethUsdPriceFeed;
+    }
+
+    let _args=[_address];
+    await deploy("FundMe", {
+        contract: "FundMe",
+        from: user,
+        log: true,
+        args: _args,
     });
+    log("fundMe deployed....");
+    const FundMe = await get("FundMe");
+    //vertify
+    if (networkConfig[chainId] && !NETWORK_NAME.includes(networkConfig[chainId].name
+    && process.env.EHTERSCAN_API_HARDHAT_KEY)){
+        log("fundMe verify starting....");
+        /*注意这里需要有 etherscan: {
+        apiKey: process.env.EHTERSCAN_API_HARDHAT_KEY,
+    }的相关配置*/
+        await verify(FundMe.address,_args);
+    }
+
     // log(fundMe);
     // const fundMe=await fundMeFactory.deployed();
     // const tx=await fundMe.fund();
     // log(tx);
 }
 
-module.exports.tags=["all","fundMe"];
+module.exports.tags = ["all", "fundMe"];
