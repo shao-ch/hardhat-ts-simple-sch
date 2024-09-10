@@ -2,15 +2,21 @@ require("@nomicfoundation/hardhat-toolbox");
 require("hardhat-deploy");
 require("dotenv").config();
 /** @type import('hardhat/config').HardhatUserConfig */
+
+const {ProxyAgent, setGlobalDispatcher} = require("undici");
+const proxyAgent = new ProxyAgent("http://127.0.0.1:1802");
+setGlobalDispatcher(proxyAgent);
+
 module.exports = {
     solidity: "0.8.24",
     networks: {
         hardhat: {},
-        // sepolia: {
-        //     url: process.env.PRIVATE_URL,
-        //     accounts: [process.env.PRIVATE_KEY],
-        //     chainId: 11155111,
-        // },
+        sepolia: {
+            /*这里是要给你要部署到哪里的地址，我这里选择的是ankr*/
+            url: process.env.PRIVATE_URL,
+            accounts: [process.env.PRIVATE_KEY],
+            chainId: 11155111,
+        },
         localhost: {
             url: "HTTP://127.0.0.1:8545",
             accounts: [process.env.PRIVATE_KEY_LOCAL],
@@ -18,21 +24,24 @@ module.exports = {
         }
     },
 
-    /*这个是verify认证需要的api*/
-    // etherscan: {
-    //     apiKey: process.env.ETHERS_API_HARDHAT_KEY,
-    // },
+    gasReporter: {
+        enabled: false,
+        outputFile: "gas-report.txt",
+        noColors: true,
+        currency: "USD",
+        coinmarketcap: process.env.COINMARKETCAP_API_KEY
+        // token: "ETH",
+    },
 
-    /*这个是打印gas 花费的报告的*/
-    // gasReporter: {
-    //     enabled: true,
-    //     currency: "USD",
-    //     noColors: true,
-    //     coinmarketcap: "30163af0-9406-4a93-85a2-627fde719a5a",
-    //     L1Etherscan: process.env.ETHERS_API_HARDHAT_KEY,
-    //     // outputFile:"./gas_reporter.txt",
-    //     offline: true
-    // },
+    /*这个是verify用的，进行远程代码认证*/
+    etherscan: {
+        apiKey: process.env.ETHERS_API_HARDHAT_KEY,
+    },
+    sourcify: {
+        // Disabled by default
+        // Doesn't need an API key
+        enabled: true
+    },
 
     namedAccounts: {
         deployer: {
