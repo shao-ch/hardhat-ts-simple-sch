@@ -1,7 +1,7 @@
 const {network} = require("hardhat");
 const {networkConfig, NETWORK_NAME} = require("../helper-hardhat-config");
 const {verify} = require("../utils/Vertify");
-
+require("dotenv").config();
 module.exports = async ({deployments, getNamedAccounts}) => {
     const {deploy, log} = deployments;
     const {deployer} = await getNamedAccounts();
@@ -28,24 +28,23 @@ module.exports = async ({deployments, getNamedAccounts}) => {
         from: deployer,
         log: true,
         args: _args,
+        waitConfirmations: network.config.blockConfirmations || 1,
     });
     log("fundMe deployed....");
-
 
     log(`fundMe address is :${fundMe.address}`);
 
     //vertify
-    if (networkConfig[chainId] && !NETWORK_NAME.includes(networkConfig[chainId].name
-        && process.env.EHTERSCAN_API_HARDHAT_KEY)) {
+    log(!NETWORK_NAME.includes(networkConfig[chainId].name));
+    if (!NETWORK_NAME.includes(networkConfig[chainId].name)
+        && process.env.EHTERSCAN_API_HARDHAT_KEY) {
         log("fundMe verify starting....");
         /*注意这里需要有 etherscan: {
         apiKey: process.env.EHTERSCAN_API_HARDHAT_KEY,
     }的相关配置*/
-        await verify(FundMe.address, _args);
+        await verify(fundMe.address, _args);
+        log("fundMe had been verified and  deployed....");
     }
-
-    log("fundMe had been verified and  deployed....");
-
 }
 
 module.exports.tags = ["all", "fundMe"];

@@ -16,6 +16,7 @@ module.exports = {
             url: process.env.PRIVATE_URL,
             accounts: [process.env.PRIVATE_KEY],
             chainId: 11155111,
+            blockConfirmations: 6
         },
         localhost: {
             url: "HTTP://127.0.0.1:8545",
@@ -37,11 +38,11 @@ module.exports = {
     etherscan: {
         apiKey: process.env.ETHERS_API_HARDHAT_KEY,
     },
-    // sourcify: {
-    //     // Disabled by default
-    //     // Doesn't need an API key
-    //     enabled: true
-    // },
+    sourcify: {
+        // Disabled by default
+        // Doesn't need an API key
+        enabled: true
+    },
 
     namedAccounts: {
         deployer: {

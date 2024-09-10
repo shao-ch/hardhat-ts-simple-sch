@@ -7,7 +7,7 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.",
   "devDependencies": {
     "@chainlink/contracts": "^1.2.0",
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.7",
@@ -19,7 +19,7 @@
     "@types/mocha": "^10.0.7",
     "dotenv": "^16.4.5",
     "ethers": "^6.13.2",
-    "hardhat": "^2.22.9",
+    "hardhat": "^2.22.10",
     "hardhat-deploy": "^0.12.4",
     "hardhat-deploy-ethers": "^0.4.2",
     "hardhat-gas-reporter": "^1.0.10",
@@ -35,5 +35,8 @@
     "@types/chai": "^4.3.19",
     "solc": "^0.8.24",
     "undici": "^6.19.8"
+  },
+  "directories": {
+    "test": "test"
   }
 }

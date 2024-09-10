@@ -12,7 +12,7 @@ const networkConfig={
     }
 }
 
-NETWORK_NAME=["sepolia","localhost"];
+NETWORK_NAME=["localhost"];
 
 DECIMAL=8;
 PRICE=200000000000;
