@@ -3,9 +3,9 @@ require("hardhat-deploy");
 require("dotenv").config();
 /** @type import('hardhat/config').HardhatUserConfig */
 
-const {ProxyAgent, setGlobalDispatcher} = require("undici");
-const proxyAgent = new ProxyAgent("http://127.0.0.1:1802");
-setGlobalDispatcher(proxyAgent);
+// const {ProxyAgent, setGlobalDispatcher} = require("undici");
+// const proxyAgent = new ProxyAgent("http://127.0.0.1:1802");
+// setGlobalDispatcher(proxyAgent);
 
 module.exports = {
     solidity: "0.8.24",
@@ -37,16 +37,16 @@ module.exports = {
     etherscan: {
         apiKey: process.env.ETHERS_API_HARDHAT_KEY,
     },
-    sourcify: {
-        // Disabled by default
-        // Doesn't need an API key
-        enabled: true
-    },
+    // sourcify: {
+    //     // Disabled by default
+    //     // Doesn't need an API key
+    //     enabled: true
+    // },
 
     namedAccounts: {
         deployer: {
             default: 0,
-            "localhost":"0",
+            "localhost":0,
         },
         user: {
             default: 1,

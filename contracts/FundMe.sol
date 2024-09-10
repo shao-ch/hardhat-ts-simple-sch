@@ -4,8 +4,6 @@ pragma solidity ^0.8.13;
 import "./NumberUtils.sol";
 
 
-error fundMe_error();
-
 contract FundMe {
 
     using NumberUtils for uint256;
@@ -45,9 +43,7 @@ contract FundMe {
     }
 
     modifier checkFunder(){
-        if(msg.sender == i_owner){
-            revert fundMe_error();
-        }
+       require(msg.sender == i_owner, "only owner can withdraw");
         _;
     }
 }

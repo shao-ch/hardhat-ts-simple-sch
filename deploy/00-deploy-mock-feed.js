@@ -1,21 +1,24 @@
 const {network} = require("hardhat");
 
 const {networkConfig, DECIMAL, PRICE, NETWORK_NAME} = require("../helper-hardhat-config");
-const constants = require("node:constants");
 
-module.exports = async ({deployments, getNamedAccounts, ethers}) => {
+module.exports = async ({deployments, getNamedAccounts}) => {
     const {deploy, log} = await deployments;
     const {deployer} = await getNamedAccounts();
 
 
     const chainId = network.config.chainId;
-    log(chainId);
-    const chainIdConfig = networkConfig[chainId];
-    console.log(chainIdConfig.name)
-    log(NETWORK_NAME)
 
-    log((NETWORK_NAME instanceof Array));
+    const chainIdConfig = networkConfig[chainId];
+
+    log(deployer);
+
+
+    log((NETWORK_NAME.includes(chainIdConfig.name)));
+
+
     if (NETWORK_NAME.includes(chainIdConfig.name)) {
+        log(chainId);
         await deploy("MockV3Aggregator", {
             contract: "MockV3Aggregator",
             from: deployer,
