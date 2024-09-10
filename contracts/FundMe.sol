@@ -3,6 +3,9 @@ pragma solidity ^0.8.13;
 
 import "./NumberUtils.sol";
 
+
+error fundMe_error();
+
 contract FundMe {
 
     using NumberUtils for uint256;
@@ -31,7 +34,7 @@ contract FundMe {
         funderToValue[msg.sender] = value;
     }
 
-    function withdraw() public {
+    function withdraw() public checkFunder {
         for (uint256 i = 0; i < funders.length; i++) {
             funderToValue[funders[i]] = 0;
         }
@@ -42,7 +45,9 @@ contract FundMe {
     }
 
     modifier checkFunder(){
-        require(msg.sender == i_owner, "You are not the owner");
+        if(msg.sender == i_owner){
+            revert fundMe_error();
+        }
         _;
     }
 }
