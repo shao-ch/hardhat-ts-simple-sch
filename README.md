@@ -18,8 +18,9 @@ Try running some of the following tasks:
       1、 npm install --save-dev @nomicfoundation/hardhat-ethers ethers，封装了ethers的api
       2、 npm install --save-dev  @nomicfoundation/hardhat-ethers hardhat-deploy-ethers ethers 安装hardhat-deploy-ethers，方便配合hardhat-deploy一起使用，文档说的
     6、help-hardhat-config,aave-v3-core这个插件可以获取配置的一些模版，给我们提供一个思路
-    7、solidity-coverage ，这个是solidity代码检查的工具。安装命令： yarn add solidity-coverage --dev，具体细节：https://www.npmjs.com/package/solidity-coverage
-    8、安装如下命令，因为coverage需要这些包：npm install --save-dev "@nomicfoundation/hardhat-chai-matchers@^2.0.0" "@nomicfoundation/hardhat-ignition-ethers@^0.15.0" "@nomicfoundation/hardhat-network-helpers@^1.0.0" "@nomicfoundation/hardhat-verify@^2.0.0" "@types/mocha@>=9.1.0" "hardhat-gas-reporter@^1.0.8" "ts-node@>=8.0.0" "typechain@^8.3.0" "typescript@>=4.5.0" 
+    7、hardhat-gas-reporter，gas-reporter可以查看合约的gas消耗情况，文档：https://www.npmjs.com/package/hardhat-gas-reporter
+    8、solidity-coverage ，这个是solidity代码检查的工具。安装命令： yarn add solidity-coverage --dev，具体细节：https://www.npmjs.com/package/solidity-coverage
+    9、安装如下命令，因为coverage需要这些包：npm install --save-dev "@nomicfoundation/hardhat-chai-matchers@^2.0.0" "@nomicfoundation/hardhat-ignition-ethers@^0.15.0" "@nomicfoundation/hardhat-network-helpers@^1.0.0" "@nomicfoundation/hardhat-verify@^2.0.0" "@types/mocha@>=9.1.0" "hardhat-gas-reporter@^1.0.8" "ts-node@>=8.0.0" "typechain@^8.3.0" "typescript@>=4.5.0" 
 5、运行命令:
     1、脚本：yarn hardhat run scripts/deploy.ts 或者  npx hardhat run scripts/deploy.ts  --network [name]
     2、编译智能合约命令：npx hardhat compile

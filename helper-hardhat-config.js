@@ -12,7 +12,7 @@ const networkConfig={
     }
 }
 
-NETWORK_NAME=["localhost"];
+NETWORK_NAME=["localhost","ganache"];
 
 DECIMAL=8;
 PRICE=200000000000;

@@ -4,24 +4,29 @@ pragma solidity ^0.8.13;
 import "./NumberUtils.sol";
 
 
+    error FundMe_Not_Owner();
+
 contract FundMe {
 
     using NumberUtils for uint256;
 
-    AggregatorV3Interface private aggregatorV3;
+    MockV3Aggregator private aggregatorV3;
 
-    uint256 private MINIMUM_VALUE = 5;
+    uint256 private MINIMUM_VALUE = 5*10**18;
 
     address[] public funders;
-
     address public immutable i_owner;
-
     mapping(address => uint256) public funderToValue;
 
     constructor(address _address){
         i_owner = msg.sender;
-        aggregatorV3 = AggregatorV3Interface(_address);
+        aggregatorV3 = MockV3Aggregator(_address);
     }
+
+    function getFunders() public view returns (address[] memory) {
+        return funders;
+    }
+
 
     /*给合约转账*/
     function fund() public payable {
@@ -30,6 +35,10 @@ contract FundMe {
 
         funders.push(msg.sender);
         funderToValue[msg.sender] = value;
+    }
+
+    function getAggregatorV3() public view returns(MockV3Aggregator) {
+        return aggregatorV3;
     }
 
     function withdraw() public checkFunder {
@@ -42,8 +51,24 @@ contract FundMe {
         require(isSuccess, "withdraw fail");
     }
 
+    /*
+     * @Desc: receive 函数表示转账函数，如果入参会执行该函数，就当执行如：msg.sender.transfer,send，如果有入参就执行fallback，没有执行receive
+    */
+    fallback() external payable {
+        fund();
+    }
+
+    /*
+     * @Desc: receive 函数表示转账函数，如果入参会执行该函数，就当执行如：msg.sender.transfer,send，如果有入参就执行fallback，没有执行receive
+    */
+    receive() external payable {
+        fund();
+    }
+
     modifier checkFunder(){
-       require(msg.sender == i_owner, "only owner can withdraw");
+        if (!(msg.sender == i_owner)) {
+            revert FundMe_Not_Owner();
+        }
         _;
     }
 }

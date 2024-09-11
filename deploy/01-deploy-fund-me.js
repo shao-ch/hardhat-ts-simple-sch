@@ -28,6 +28,7 @@ module.exports = async ({deployments, getNamedAccounts}) => {
         from: deployer,
         log: true,
         args: _args,
+        /*how many block are needed to confirm */
         waitConfirmations: network.config.blockConfirmations || 1,
     });
     log("fundMe deployed....");
@@ -35,7 +36,6 @@ module.exports = async ({deployments, getNamedAccounts}) => {
     log(`fundMe address is :${fundMe.address}`);
 
     //vertify
-    log(!NETWORK_NAME.includes(networkConfig[chainId].name));
     if (!NETWORK_NAME.includes(networkConfig[chainId].name)
         && process.env.EHTERSCAN_API_HARDHAT_KEY) {
         log("fundMe verify starting....");

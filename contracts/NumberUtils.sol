@@ -1,12 +1,11 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
-
+import {MockV3Aggregator} from "@chainlink/contracts/src/v0.8/tests/MockV3Aggregator.sol";
 library NumberUtils {
 
     /*这里的单位是usd/eth*/
-    function getPrice(AggregatorV3Interface aggregatorV3) internal view returns (uint256)  {
+    function getPrice(MockV3Aggregator aggregatorV3) internal view returns (uint256)  {
         /*获取最近的价格*/
         (, int256 price,,,) = aggregatorV3.latestRoundData();
         /*获取单价*/
@@ -16,7 +15,7 @@ library NumberUtils {
     }
 
     /*_ethCount,这里是wei，所以要除1e18*/
-    function convertAmount(uint256 _ethCount,AggregatorV3Interface aggregatorV3) internal view returns (uint256)  {
+    function convertAmount(uint256 _ethCount,MockV3Aggregator aggregatorV3) internal view returns (uint256)  {
         uint256 price = getPrice(aggregatorV3);
         return _ethCount * price / 1e18;
     }
