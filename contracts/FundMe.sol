@@ -12,9 +12,9 @@ contract FundMe {
 
     MockV3Aggregator private aggregatorV3;
 
-    uint256 private MINIMUM_VALUE = 5*10**18;
+    uint256 private MINIMUM_VALUE = 0;
 
-    address[] public funders;
+    address[] private funders;
     address public immutable i_owner;
     mapping(address => uint256) public funderToValue;
 
@@ -28,6 +28,10 @@ contract FundMe {
     }
 
 
+    function getFunderValue(address _address) public view returns (uint256) {
+        return funderToValue[_address];
+    }
+
     /*给合约转账*/
     function fund() public payable {
         uint256 value = msg.value.convertAmount(aggregatorV3);
@@ -37,18 +41,35 @@ contract FundMe {
         funderToValue[msg.sender] = value;
     }
 
-    function getAggregatorV3() public view returns(MockV3Aggregator) {
-        return aggregatorV3;
-    }
-
-    function withdraw() public checkFunder {
+    function withdrawV2() public {
         for (uint256 i = 0; i < funders.length; i++) {
             funderToValue[funders[i]] = 0;
         }
-        funders = new address[](0);
-        (bool isSuccess,) = payable(msg.sender).call{value: address(this).balance}("");
+        delete funders;
+        if (address(this).balance > 0) {
+            (bool isSuccess,) = payable(msg.sender).call{value: address(this).balance}("");
+            require(isSuccess, "withdraw fail");
+        }
+    }
 
-        require(isSuccess, "withdraw fail");
+    function cheapWithdraw() public {
+        address[] memory i_memory = funders;
+
+        for (uint256 i = 0; i < i_memory.length; i++) {
+            funderToValue[i_memory[i]] = 0;
+        }
+        funders = new address[](0);
+
+        if (address(this).balance > 0) {
+            (bool success,) = payable(msg.sender).call{value: address(this).balance}("");
+            require(success, "withdraw fail");
+        }
+
+    }
+
+
+    function getAggregatorV3() public view returns (MockV3Aggregator) {
+        return aggregatorV3;
     }
 
     /*
@@ -66,7 +87,7 @@ contract FundMe {
     }
 
     modifier checkFunder(){
-        if (!(msg.sender == i_owner)) {
+        if ((msg.sender != i_owner)) {
             revert FundMe_Not_Owner();
         }
         _;

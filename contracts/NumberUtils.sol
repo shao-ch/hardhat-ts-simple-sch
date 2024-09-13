@@ -14,10 +14,10 @@ library NumberUtils {
         return uint256(price) * unit ** 10;
     }
 
-    /*_ethCount,这里是wei，所以要除1e18*/
+    /*_ethCount,这里是wei，这里的单位是 wei/usd*/
     function convertAmount(uint256 _ethCount,MockV3Aggregator aggregatorV3) internal view returns (uint256)  {
         uint256 price = getPrice(aggregatorV3);
-        return _ethCount * price / 1e18;
+        return _ethCount * price;
     }
 
 //    function getVersion() internal returns (uint256){

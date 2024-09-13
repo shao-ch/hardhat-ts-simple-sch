@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "deploy": "hardhat deploy --network ganache",
-    "test": "hardhat test --grep FundMe --network ganache",
+    "test": "hardhat test --network ganache",
     "coverage": "hardhat coverage"
   },
   "author": "",
@@ -33,9 +33,9 @@
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
   "dependencies": {
     "@typechain/ethers-v6": "^0.5.1",
-    "ethers": "^6.1.0",
     "@typechain/hardhat": "^9.1.0",
     "@types/chai": "^4.3.19",
+    "ethers": "^6.1.0",
     "solc": "^0.8.24",
     "undici": "^6.19.8"
   },

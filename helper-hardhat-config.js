@@ -14,8 +14,8 @@ const networkConfig={
 
 NETWORK_NAME=["localhost","ganache"];
 
-DECIMAL=8;
-PRICE=200000000000;
+DECIMAL=1;
+PRICE=2000;
 
 module.exports={
     networkConfig,
