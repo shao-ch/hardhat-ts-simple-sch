@@ -41,18 +41,18 @@ contract FundMe {
         funderToValue[msg.sender] = value;
     }
 
-    function withdrawV2() public {
+    function withdrawV2() public checkFunder{
         for (uint256 i = 0; i < funders.length; i++) {
             funderToValue[funders[i]] = 0;
         }
-        delete funders;
+        funders =new address[](0);
         if (address(this).balance > 0) {
             (bool isSuccess,) = payable(msg.sender).call{value: address(this).balance}("");
             require(isSuccess, "withdraw fail");
         }
     }
 
-    function cheapWithdraw() public {
+    function cheapWithdraw() public checkFunder{
         address[] memory i_memory = funders;
 
         for (uint256 i = 0; i < i_memory.length; i++) {

@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "deploy": "hardhat deploy --network ganache",
-    "test": "hardhat test --network ganache",
+    "test": "hardhat test --grep Mutest --network ganache",
     "coverage": "hardhat coverage"
   },
   "author": "",
