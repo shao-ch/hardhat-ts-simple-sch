@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "deploy": "hardhat deploy --network ganache",
-    "test": "hardhat test --grep Mutest --network ganache",
+    "deploy": "hardhat deploy deploy/02-deploy-shipping.js --network ganache",
+    "test": "hardhat test --grep Shipping --network ganache",
     "coverage": "hardhat coverage"
   },
   "author": "",
@@ -32,6 +32,7 @@
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
   "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2",
     "@typechain/ethers-v6": "^0.5.1",
     "@typechain/hardhat": "^9.1.0",
     "@types/chai": "^4.3.19",
