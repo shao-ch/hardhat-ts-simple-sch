@@ -168,6 +168,10 @@ const {NETWORK_NAME} = require("../helper-hardhat-config");
                 console.assert(afterTotal.toString() === beforeTotal.toString())
             });
         })
+
+        describe("cheapWithdrawV2", async function () {
+            console.log(ethers.parseEther("1000000"))
+})
     });
 
 
