@@ -41,19 +41,25 @@ AccessControlUpgradeable
     4. User's `finishedRCC` gets updated.
     */
     struct Pool {
-        // Address of staking token
+        // Address of staking token    在addPool的时候给的
         address stTokenAddress;
-        // Weight of pool
+
+        // Weight of pool       在addPool的时候给的，对应的权重，相当于你奖励的比重，也就是说如果总数是35，你的币种是10，挖取一个block获取的token就是(RCCPerBlock)*10/35
         uint256 poolWeight;
-        // Last block number that RCCs distribution occurs for pool
+
+        // Last block number that RCCs distribution occurs for pool 创建池子的时候，当时的blockNumber
         uint256 lastRewardBlock;
-        // Accumulated RCCs per staking token of pool
+
+        // Accumulated RCCs per staking token of pool  这个池子累计获取的RCC,每个池子对应一种代币，也是相当于每个质押币对应多少个RCC
         uint256 accRCCPerST;
-        // Staking token amount
+
+        // Staking token amount  这个池子本身的代币
         uint256 stTokenAmount;
-        // Min staking amount
+
+        // Min staking amount     最小质押金额，目前不知道啥意思
         uint256 minDepositAmount;
-        // Withdraw locked blocks
+
+        // Withdraw locked blocks   解除质押的锁定区块数，目前不知道啥意思
         uint256 unstakeLockedBlocks;
     }
 
@@ -371,6 +377,7 @@ AccessControlUpgradeable
     function pendingRCCByBlockNumber(uint256 _pid, address _user, uint256 _blockNumber) public checkPid(_pid) view returns(uint256) {
         Pool storage pool_ = pool[_pid];
         User storage user_ = user[_pid][_user];
+        //每个质押池的累计的RCC代币
         uint256 accRCCPerST = pool_.accRCCPerST;
         uint256 stSupply = pool_.stTokenAmount;
 
@@ -483,7 +490,7 @@ AccessControlUpgradeable
     }
 
     /**
-     * @notice Unstake staking tokens
+     * @notice 提取质押币，这里相当于一个操作，不会直接从用户账户中扣款，而是会记录下来，待到用户取款时才从用户账户中扣款，应该是防止并发产生错乱
      *
      * @param _pid       Id of the pool to be withdrawn from
      * @param _amount    amount of staking tokens to be withdrawn
@@ -520,6 +527,7 @@ AccessControlUpgradeable
      * @notice Withdraw the unlock unstake amount
      *
      * @param _pid       Id of the pool to be withdrawn from
+     *  whenNotPaused，这是个紧急函数，如果发生紧急情况时候会使用，所以需要在这里加上
      */
     function withdraw(uint256 _pid) public whenNotPaused() checkPid(_pid) whenNotWithdrawPaused() {
         Pool storage pool_ = pool[_pid];
@@ -531,6 +539,7 @@ AccessControlUpgradeable
             if (user_.requests[i].unlockBlocks > block.number) {
                 break;
             }
+            //注意，这里的amount指的就是RCC 代币，并不是什么金额
             pendingWithdraw_ = pendingWithdraw_ + user_.requests[i].amount;
             popNum_++;
         }
@@ -591,8 +600,9 @@ AccessControlUpgradeable
 
         updatePool(_pid);
 
+        //这里就是计算一下当前的用户已经获得的奖励
         if (user_.stAmount > 0) {
-            // uint256 accST = user_.stAmount.mulDiv(pool_.accRCCPerST, 1 ether);
+//             uint256 accST = user_.stAmount.mulDiv(pool_.accRCCPerST, 1 ether);
             (bool success1, uint256 accST) = user_.stAmount.tryMul(pool_.accRCCPerST);
             require(success1, "user stAmount mul accRCCPerST overflow");
             (success1, accST) = accST.tryDiv(1 ether);
@@ -619,6 +629,7 @@ AccessControlUpgradeable
         pool_.stTokenAmount = stTokenAmount;
 
         // user_.finishedRCC = user_.stAmount.mulDiv(pool_.accRCCPerST, 1 ether);
+        //这里再次计算一下，质押币添加了，所以相应的token也增加
         (bool success6, uint256 finishedRCC) = user_.stAmount.tryMul(pool_.accRCCPerST);
         require(success6, "user stAmount mul accRCCPerST overflow");
 
