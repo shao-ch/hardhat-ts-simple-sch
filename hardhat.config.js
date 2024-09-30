@@ -1,6 +1,8 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("hardhat-deploy");
 require("hardhat-gas-reporter")
+require("@nomicfoundation/hardhat-verify");
+require("@openzeppelin/hardhat-upgrades")
 require("dotenv").config();
 /** @type import('hardhat/config').HardhatUserConfig */
 
@@ -12,21 +14,21 @@ module.exports = {
     solidity: "0.8.24",
     networks: {
         hardhat: {},
-        sepolia: {
-            /*这里是要给你要部署到哪里的地址，我这里选择的是ankr*/
-            url: process.env.PRIVATE_URL,
-            accounts: [process.env.PRIVATE_KEY],
-            chainId: 11155111,
-            blockConfirmations: 6
-        },
-        localhost: {
-            url: "HTTP://127.0.0.1:8545",
-            accounts: [process.env.PRIVATE_KEY_LOCAL],
-            chainId: 31337,
-        },
+        // sepolia: {
+        //     /*这里是要给你要部署到哪里的地址，我这里选择的是ankr*/
+        //     url: process.env.PRIVATE_URL,
+        //     accounts: [process.env.PRIVATE_KEY],
+        //     chainId: 11155111,
+        //     blockConfirmations: 6
+        // },
+        // localhost: {
+        //     url: "HTTP://127.0.0.1:8545",
+        //     // accounts: [process.env.PRIVATE_KEY_LOCAL],
+        //     chainId: 31337,
+        // },
         ganache: {
             url: "HTTP://127.0.0.1:7545",
-            accounts: [process.env.PRIVATE_KEY_GANACHE],
+            // accounts: [process.env.PRIVATE_KEY_GANACHE],
             chainId: 1337,
         },
     },

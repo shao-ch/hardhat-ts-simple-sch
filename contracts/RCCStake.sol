@@ -56,10 +56,10 @@ AccessControlUpgradeable
         // Staking token amount  这个池子本身的代币
         uint256 stTokenAmount;
 
-        // Min staking amount     最小质押金额，目前不知道啥意思
+        // Min staking amount     最小质押金额
         uint256 minDepositAmount;
 
-        // Withdraw locked blocks   解除质押的锁定区块数，目前不知道啥意思
+        // Withdraw locked blocks   解除质押的锁定区块数
         uint256 unstakeLockedBlocks;
     }
 
@@ -71,11 +71,11 @@ AccessControlUpgradeable
     }
 
     struct User {
-        // Staking token amount that user provided
+        // Staking token amount that user provided 这里是用户的质押币的数量，不是本合约的代币
         uint256 stAmount;
-        // Finished distributed RCCs to user
+        // Finished distributed RCCs to user  完成的本合约代币的数量
         uint256 finishedRCC;
-        // Pending to claim RCCs
+        // Pending to claim RCCs    带提取的本合约代币的数量
         uint256 pendingRCC;
         // Withdraw request list
         UnstakeRequest[] requests;
@@ -165,10 +165,12 @@ AccessControlUpgradeable
         uint256 _RCCPerBlock
     ) public initializer {
         require(_startBlock <= _endBlock && _RCCPerBlock > 0, "invalid parameters");
-
+        //这两个函数来自于AccessControlUpgradeable，两个空函数，可以重写，因为上面有onlyInitializing，所以只会在初始化的时候执行，其他时候不能再次调用
         __AccessControl_init();
         __UUPSUpgradeable_init();
+        //初始化是否可以紧急停止，默认为false，这个函数就是给默认值的
         __Pausable_init();
+        //下面的三个是赋予权限，会放在一个数组里面，也是来自于AccessControlUpgradeable
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _grantRole(UPGRADE_ROLE, msg.sender);
         _grantRole(ADMIN_ROLE, msg.sender);
@@ -533,25 +535,21 @@ AccessControlUpgradeable
         Pool storage pool_ = pool[_pid];
         User storage user_ = user[_pid][msg.sender];
 
+
         uint256 pendingWithdraw_;
-        uint256 popNum_;
-        for (uint256 i = 0; i < user_.requests.length; i++) {
-            if (user_.requests[i].unlockBlocks > block.number) {
-                break;
+        uint256 index=0;
+        while(user_.requests.length>0&&index<user_.requests.length){
+            if (user_.requests[index].unlockBlocks <= block.number) {
+                UnstakeRequest memory request_ = user_.requests[index];
+                pendingWithdraw_ = pendingWithdraw_ + request_.amount;
+                user_.requests[index] = user_.requests[user_.requests.length-1];
+                user_.requests.pop();
+            }else{
+                index++;
             }
-            //注意，这里的amount指的就是RCC 代币，并不是什么金额
-            pendingWithdraw_ = pendingWithdraw_ + user_.requests[i].amount;
-            popNum_++;
         }
 
-        for (uint256 i = 0; i < user_.requests.length - popNum_; i++) {
-            user_.requests[i] = user_.requests[i + popNum_];
-        }
-
-        for (uint256 i = 0; i < popNum_; i++) {
-            user_.requests.pop();
-        }
-
+        //制定数量的本合约代币就给给到用户
         if (pendingWithdraw_ > 0) {
             if (pool_.stTokenAddress == address(0x0)) {
                 _safenativeCurrencyTransfer(msg.sender, pendingWithdraw_);
@@ -661,7 +659,7 @@ AccessControlUpgradeable
      * @notice Safe nativeCurrency transfer function
      *
      * @param _to        Address to get transferred nativeCurrency
-     * @param _amount    Amount of nativeCurrency to be transferred
+     * @param _amount    Amount of nativeCurrency to be transferred 本合约代币
      */
     function _safenativeCurrencyTransfer(address _to, uint256 _amount) internal {
         (bool success, bytes memory data) = address(_to).call{

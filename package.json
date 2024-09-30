@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "deploy": "hardhat deploy --network ganache",
-    "test": "hardhat test --grep Mutest --network ganache",
+    "test_sctoken": "hardhat test --grep SCToken --network ganache",
     "coverage": "hardhat coverage"
   },
   "author": "",
@@ -14,10 +14,13 @@
     "@chainlink/contracts": "^1.2.0",
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.7",
     "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "@nomicfoundation/hardhat-ignition": "^0.15.6",
     "@nomicfoundation/hardhat-ignition-ethers": "^0.15.5",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.11",
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "@nomicfoundation/hardhat-verify": "^2.0.10",
+    "@nomicfoundation/ignition-core": "^0.15.6",
+    "@openzeppelin/hardhat-upgrades": "^3.4.0",
     "@types/mocha": "^10.0.7",
     "dotenv": "^16.4.5",
     "ethers": "^6.1.0",

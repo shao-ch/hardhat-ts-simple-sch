@@ -1,3 +1,4 @@
+
 # Sample Hardhat Project
 
 This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
@@ -21,6 +22,7 @@ Try running some of the following tasks:
     7、hardhat-gas-reporter，gas-reporter可以查看合约的gas消耗情况，文档：https://www.npmjs.com/package/hardhat-gas-reporter
     8、solidity-coverage ，这个是solidity代码检查的工具。安装命令： yarn add solidity-coverage --dev，具体细节：https://www.npmjs.com/package/solidity-coverage
     9、安装如下命令，因为coverage需要这些包：npm install --save-dev "@nomicfoundation/hardhat-chai-matchers@^2.0.0" "@nomicfoundation/hardhat-ignition-ethers@^0.15.0" "@nomicfoundation/hardhat-network-helpers@^1.0.0" "@nomicfoundation/hardhat-verify@^2.0.0" "@types/mocha@>=9.1.0" "hardhat-gas-reporter@^1.0.8" "ts-node@>=8.0.0" "typechain@^8.3.0" "typescript@>=4.5.0" 
+    10、安装如下命令，不然没办法进行合约升级的部署，npm install --save-dev @openzeppelin/hardhat-upgrades，然后在config.js中配置
 5、运行命令:
     1、脚本：yarn hardhat run scripts/deploy.ts 或者  npx hardhat run scripts/deploy.ts  --network [name]
     2、编译智能合约命令：npx hardhat compile
@@ -32,4 +34,6 @@ npx hardhat help  --查看hardhat有哪些命令
 npx hardhat test  --执行hardhat测试用例
 REPORT_GAS=true npx hardhat test
 npx hardhat node
+
+npx @openzeppelin/upgrades-core validate,这个命令是验证升级合约的
 ```
