@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "deploy": "hardhat deploy --network ganache",
-    "test_sctoken": "hardhat test --grep SCToken --network ganache",
+    "test_sctoken": "hardhat test --grep test7 --network ganache",
     "coverage": "hardhat coverage"
   },
   "author": "",
