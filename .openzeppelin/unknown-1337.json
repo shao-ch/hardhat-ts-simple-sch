@@ -45,6 +45,221 @@
       "address": "0xE661caAf76591229Cc4aAbc4a753512DeFD3eA5C",
       "txHash": "0xf03889f1bffe1fc2b0f92f14e3d3efa1815fd62caf2dc728b3a4373da9225691",
       "kind": "transparent"
+    },
+    {
+      "address": "0x4F27c038A098E90B623b229D9454c39Db997226f",
+      "txHash": "0x7b6f05796e921fb55325875a94c4d63c123f08e55da5aa4f5f4c0054b150c7c5",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x4543Bb23Ed87b7D5a3cB16FC70464f5eFea1946F",
+      "txHash": "0x62b03e7e791d71b29505267dfeff5151fe67cda6ac7a8cf0cd47912dea85689e",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x87be2Bf1bC3baFb34fFf9a2674C0D30D75747b97",
+      "txHash": "0x3dc999ecc5eeafc35c2a7195dddda344063ad23bd678d5c42ed3a13a59467c80",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x39f26768641F5F1C036Bd1D92e2E605e27e62D50",
+      "txHash": "0x9e0b6685ee13f6fbda40c6be6e95248d8f4e5d9b67635cb33fe87526aa6ca839",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x1Cf7e48473A8b5E004326Bc3C50987D7C4Bd6609",
+      "txHash": "0xc3ad3073e51a7659c9da43e8ba164e83c1da6ece1a710b7a2628d84af2512d3f",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xb3E604175Ac4D82B200DCfB1F197910b596f6a69",
+      "txHash": "0xfa145abe6c89c7b7bcd231b09b6263b7fd9debcde974ca17692644a92cf98c04",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x8Ec01aAA5BA95CeeBc2038381aab0e1D2cA63643",
+      "txHash": "0xf1ee8bb8e2560a5345ac974282c3f2f684526822b230317e5c68f909df9ce1e9",
+      "kind": "uups"
+    },
+    {
+      "address": "0x796FC0CF446Dd3982DA0CE6D3a12482D0222f8D5",
+      "txHash": "0x346548ac0f5eb2bffb31544d066b72eeb182e17a170b48af3a8f9a07083c983c",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x7d667306FE380cD71F6E70EEc5906e84E11e8f30",
+      "txHash": "0x730baba0761e4f0242c0b501bd2abb690bfc7e4ffe9da9775f93c7ff6aa6d7fb",
+      "kind": "uups"
+    },
+    {
+      "address": "0x29730003E9b79A22ffc896EeAd4062d839C4EF8c",
+      "txHash": "0x17d82c8d6a0e8e84041e52199453ee0242f97d11cf5b1934b29fb3c29cdb9594",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x0752b1D579E3279F594B99bA3CCb5D2fE4fCf359",
+      "txHash": "0xed0cdc38f54635f41e09b2649c5f3d37aa73078bad3e6ede97a203156b99cec6",
+      "kind": "uups"
+    },
+    {
+      "address": "0xCE2E853556e07A363b6E9be01f9CeC4D7BC18b6e",
+      "txHash": "0x48c60696069e81f8ea8fe823a8417dee4203a8cbf7a0613e7d4aed28ff060862",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xD22Df4CB2CdeF3f8603b6a100C9302e274F63b27",
+      "txHash": "0x232324205007533843793634c91eb22d6c83f9a79d7f5d4436cabf3465909253",
+      "kind": "uups"
+    },
+    {
+      "address": "0x65cca7c894682F048871D471480E3Db037690dC8",
+      "txHash": "0x3854f7fff26e7085c8dee52f1432bf5573f7ae0e790daa72d7931d6e281da1d0",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xb4Baa64D3267aC59f7F7124f4C979FbB586E2349",
+      "txHash": "0x6ae5e69f2e4a49ea14168a2a11a4e589d91e61bc72b0765ef839472a83b997f7",
+      "kind": "uups"
+    },
+    {
+      "address": "0xA653c5504c888F8128Ad993B5425Bcd0D81B63e9",
+      "txHash": "0xec43ee3f74cbc33569e3cdf5919150019a6a6bb9eeedc7233558866d2e17ebbd",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x493e73d3efc6c289816517735Af923BbDE1e6119",
+      "txHash": "0x90b2caf69cdc86d46f9fee883ed7d0303e473955af476b13440212d9ad7e56e4",
+      "kind": "uups"
+    },
+    {
+      "address": "0x73aC2EE7fD6df3dE142a0cF09b3A09Aa0DB79D24",
+      "txHash": "0x0299da1282d9bea92192f209e36c51ef2945b0d2c9ae647c597ecfd54db62234",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x55941540Fc8a10F02f6a28CF69177f7FecC9a01C",
+      "txHash": "0x78455757de6125927a0cc4493dd5b319985fcdbe9a022b11275cb8369116f2c9",
+      "kind": "uups"
+    },
+    {
+      "address": "0x5A824294Eec1bFF16453c35cEbB49038C675d2F2",
+      "txHash": "0x714a15ab766e4586dc9ac18b0d1e710f0f7388fc8188d254e11f2bed65a2511d",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x1116f14fa3B0490c183DffaF7A4FC7d67A009D7f",
+      "txHash": "0xa04bfd0d2aa0289fd1cfc77b3b12e3763308e8978d592de6c72c78dc4943d4a1",
+      "kind": "uups"
+    },
+    {
+      "address": "0xa8cd3Fb00B93EA8EA90AC19922999B7c2e2b4A8D",
+      "txHash": "0x34f32e91649bdd61702cb49387b8cd81a2f28f8985e9943f4e3504c8739cd1fb",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x7668fba1321E1B18a20e758d9F261bdF227D9D58",
+      "txHash": "0x989943950118839326e2ce0ef82b3affa55ad6a9efdd3896f562d7c9d0563ec4",
+      "kind": "uups"
+    },
+    {
+      "address": "0x06B9E4EB719306933128804584008f50FaCA69De",
+      "txHash": "0x30dd96d43f8673df30b54f0973ef035f33622800a0c5671c09e920687d446db2",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xFa630F2daaf03FF144F2e64d8BB99C2FDa8C65FE",
+      "txHash": "0xd17291f8e51ef27a4bc4926b67a19897682be8dc664b620bcc8739a9582edb5e",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x922E3deDf8D712b6a6a3DDbB2e6d647054E005ab",
+      "txHash": "0xebb67eef125d274d76a4263a339b263dfc22dd3618acb2a6d079df01d9d625cf",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x757b3824063990E65D4165e8737E5491E98D91A2",
+      "txHash": "0x3ebca7982011dce36732668293bb2f0fc211659bbd63dc1649307f84073a5ca3",
+      "kind": "uups"
+    },
+    {
+      "address": "0x7E0C622C7d29973D22B09574FF1e487356EFA4Ae",
+      "txHash": "0xda1d7fac62c3286e2dde45dc526504047dee145b9022cd4ad70b3fed8059470b",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x2636f48B3a94D178f91b605A7F08bc821BD01F22",
+      "txHash": "0x92aee3bd0b100e62f4fa10d8baaa9d04a750cfbfaf6fb648a9b7718b87e60cec",
+      "kind": "uups"
+    },
+    {
+      "address": "0x2Db3981D6F30A6428470024Ac7ac417f6fcf18ca",
+      "txHash": "0xd403a46f1e94ecfbc721c3364607d12b16de074cae2e643645aa88be47b2d1f4",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x927EFef970b727D47397d09090388801F2D4d98e",
+      "txHash": "0x05fcf304fe0de4484dcdcba4f0a5fe8029a98c74bab5717b2c63f8669f6cb8b8",
+      "kind": "uups"
+    },
+    {
+      "address": "0xADbB21E35E174d1204631549754beE17F1b4F994",
+      "txHash": "0x96cb6dafbf5c3f0bbe1cb2c9c2ab240aead56ee224f24c2866fbf4beff5c6eb1",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xF9D451006f9829fe68a507C3e7676DBA72C6CB5a",
+      "txHash": "0x1f6b47f3ed113fbcdb64d8a1cd29bbe9f842dce9da8773394bf842bedf5cc4f0",
+      "kind": "uups"
+    },
+    {
+      "address": "0x07D23D36A6BD4cc06283430E58a34c7bBb2A5612",
+      "txHash": "0xd32739df15afe2c49f5505b8eba42db95b50a7aa49e605354075e1a0f120d44d",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x30521eA41658EdD8FBcDb6e11f57B144EDEFB4B3",
+      "txHash": "0x215bb2a6a86fc91f2e0cefaa0a004c5c99f15be83505ef76433314b6ccfa65dc",
+      "kind": "uups"
+    },
+    {
+      "address": "0x68e6A3DEaD978D42f2c194D7827D9aD45e223dB7",
+      "txHash": "0x6b34d8f0a2e48f4e17c0946fbe3420234028fe8b788c887fa2b71fae396e62fa",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x3d7657E880c71d6Db3296BA67cfAC2e1b33409D6",
+      "txHash": "0xd8c041819ae44f902bf44105313bdb593f1642a1a51261463d7fd278b53a3a00",
+      "kind": "uups"
+    },
+    {
+      "address": "0xB7597ebC820634286bee8d1C2de291E24EEe93ec",
+      "txHash": "0xd309f324a647331da2bd06fe276e6d7e9325b336896e8a4db461e8703926c39a",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x794dfC5324e86366624785fa0644b62fBc240A56",
+      "txHash": "0xa1ba484a5c88532d288574339c6241116e9f656c7b6bc126d2010768aa9f2f2a",
+      "kind": "uups"
+    },
+    {
+      "address": "0x0782dC5312e5E44CD31C0b2351f50268B98b4941",
+      "txHash": "0xbffb8f9f1d6e44140f65e2551e084baaa7af989e9295531f9d8274ea382442f5",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xC58036A2dC5ad075E46A259312A4c1f1cB88fdF6",
+      "txHash": "0x516db29c2560f2d19ddc8095a540117b35235578f26f6c81802e72c98ca52357",
+      "kind": "uups"
+    },
+    {
+      "address": "0x7cfC440d63D5bb7CBc6e6D2aa77Dc9CC04e6e810",
+      "txHash": "0x71ecc57bdf11227d9e3b0faf063f152bafce004720487ea94f99cd9eadff1195",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x53F784096410321344d9E3F929Da432D25BE125c",
+      "txHash": "0xc21a30f5ffd365ae5ea023c20c6b14153e7c85c9dc8466c8a27f55a9f3e181c8",
+      "kind": "uups"
     }
   ],
   "impls": {
@@ -97,8 +312,8 @@
       }
     },
     "03aac65685649d19981822118e6ee48fc5645fbb1bf3af1a824dd3de9e264530": {
-      "address": "0x0cf62fF880CFd2638FA3a0aCf00a39abd5a3a34C",
-      "txHash": "0x83e3d580a579c4433b8b631bc73b3297f599dfb552d2d70e837b7b7b121d3abf",
+      "address": "0x4D26d57465694286f33B46d40FDa4C9B27421dD2",
+      "txHash": "0xd625bcbbaad284d59eac5b61cf5bf4146481f48356849de7c2d47e1e5a88a87a",
       "layout": {
         "solcVersion": "0.8.24",
         "storage": [],
@@ -427,6 +642,1621 @@
               "slot": "4"
             }
           ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "a6df629488ffb90b512f409b5d538142e93c26441afc462d35f69d15efb0bf5b": {
+      "address": "0xfFC835DC622b42b3341234eD65ff92Fa185ff5a6",
+      "txHash": "0x16b18f02b3da4727bfb41825ece3a785175939e7e55277531873904a4c729528",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "_roles",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_bytes32,t_struct(RoleData)1309_storage)",
+            "contract": "AccessControl",
+            "src": "@openzeppelin/contracts/access/AccessControl.sol:55"
+          },
+          {
+            "label": "SCH",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_contract(SCToken)5359",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:33"
+          },
+          {
+            "label": "stakeLock",
+            "offset": 20,
+            "slot": "1",
+            "type": "t_bool",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:101"
+          },
+          {
+            "label": "rewardLock",
+            "offset": 21,
+            "slot": "1",
+            "type": "t_bool",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:101"
+          },
+          {
+            "label": "rewardPerBlock",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:103"
+          },
+          {
+            "label": "totalWight",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:105"
+          },
+          {
+            "label": "pools",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_array(t_struct(Pool)4306_storage)dyn_storage",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:105"
+          },
+          {
+            "label": "poolsMapping",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint256,t_struct(Pool)4306_storage)",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:105"
+          },
+          {
+            "label": "usersMapping",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_struct(User)4319_storage))",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:106"
+          },
+          {
+            "label": "existUser",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_bool))",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:108"
+          }
+        ],
+        "types": {
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)80_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_struct(Pool)4306_storage)dyn_storage": {
+            "label": "struct SCHStake.Pool[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Request)4329_storage)dyn_storage": {
+            "label": "struct SCHStake.Request[]",
+            "numberOfBytes": "32"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_contract(SCToken)5359": {
+            "label": "contract SCToken",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(User)4319_storage)": {
+            "label": "mapping(address => struct SCHStake.User)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_struct(RoleData)1309_storage)": {
+            "label": "mapping(bytes32 => struct AccessControl.RoleData)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_bool))": {
+            "label": "mapping(uint256 => mapping(address => bool))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_struct(User)4319_storage))": {
+            "label": "mapping(uint256 => mapping(address => struct SCHStake.User))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Pool)4306_storage)": {
+            "label": "mapping(uint256 => struct SCHStake.Pool)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Pool)4306_storage": {
+            "label": "struct SCHStake.Pool",
+            "members": [
+              {
+                "label": "tokenAddress",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "wight",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "totalStakeAmount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "lastBlockNumber",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "accRCCPerST",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "rccPerST",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "totalReward",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "minStakeAmount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "unStakeLockBlockNumber",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "8"
+              }
+            ],
+            "numberOfBytes": "288"
+          },
+          "t_struct(Request)4329_storage": {
+            "label": "struct SCHStake.Request",
+            "members": [
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "rewardSCH",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "isRewardBlockNumber",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(RoleData)1309_storage": {
+            "label": "struct AccessControl.RoleData",
+            "members": [
+              {
+                "label": "hasRole",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "adminRole",
+                "type": "t_bytes32",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(User)4319_storage": {
+            "label": "struct SCHStake.User",
+            "members": [
+              {
+                "label": "userAddress",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "finishedRCC",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "pendingRCC",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "stakeAmount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "requests",
+                "type": "t_array(t_struct(Request)4329_storage)dyn_storage",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "2bdc642a3fad974e8ed77b03bb7696621d0915ca178864a3a73a406782900644": {
+      "address": "0xDf22D9396984a4c33F84E9C3323b8F20dcbd0a7c",
+      "txHash": "0x04fc08f3c655a9b11a6eac437d343fc766a9238944defae720e7237d6a0c2ee4",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "_roles",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_bytes32,t_struct(RoleData)1309_storage)",
+            "contract": "AccessControl",
+            "src": "@openzeppelin/contracts/access/AccessControl.sol:55"
+          },
+          {
+            "label": "SCH",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_contract(SCToken)5352",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:33"
+          },
+          {
+            "label": "stakeLock",
+            "offset": 20,
+            "slot": "1",
+            "type": "t_bool",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:101"
+          },
+          {
+            "label": "rewardLock",
+            "offset": 21,
+            "slot": "1",
+            "type": "t_bool",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:101"
+          },
+          {
+            "label": "rewardPerBlock",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:103"
+          },
+          {
+            "label": "totalWight",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:105"
+          },
+          {
+            "label": "pools",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_array(t_struct(Pool)4299_storage)dyn_storage",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:105"
+          },
+          {
+            "label": "poolsMapping",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint256,t_struct(Pool)4299_storage)",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:105"
+          },
+          {
+            "label": "usersMapping",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_struct(User)4312_storage))",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:106"
+          },
+          {
+            "label": "existUser",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_bool))",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:108"
+          }
+        ],
+        "types": {
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)80_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_struct(Pool)4299_storage)dyn_storage": {
+            "label": "struct SCHStake.Pool[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Request)4322_storage)dyn_storage": {
+            "label": "struct SCHStake.Request[]",
+            "numberOfBytes": "32"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_contract(SCToken)5352": {
+            "label": "contract SCToken",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(User)4312_storage)": {
+            "label": "mapping(address => struct SCHStake.User)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_struct(RoleData)1309_storage)": {
+            "label": "mapping(bytes32 => struct AccessControl.RoleData)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_bool))": {
+            "label": "mapping(uint256 => mapping(address => bool))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_struct(User)4312_storage))": {
+            "label": "mapping(uint256 => mapping(address => struct SCHStake.User))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Pool)4299_storage)": {
+            "label": "mapping(uint256 => struct SCHStake.Pool)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Pool)4299_storage": {
+            "label": "struct SCHStake.Pool",
+            "members": [
+              {
+                "label": "tokenAddress",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "wight",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "totalStakeAmount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "lastBlockNumber",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "accRCCPerST",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "rccPerST",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "totalReward",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "minStakeAmount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "unStakeLockBlockNumber",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "8"
+              }
+            ],
+            "numberOfBytes": "288"
+          },
+          "t_struct(Request)4322_storage": {
+            "label": "struct SCHStake.Request",
+            "members": [
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "rewardSCH",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "isRewardBlockNumber",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(RoleData)1309_storage": {
+            "label": "struct AccessControl.RoleData",
+            "members": [
+              {
+                "label": "hasRole",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "adminRole",
+                "type": "t_bytes32",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(User)4312_storage": {
+            "label": "struct SCHStake.User",
+            "members": [
+              {
+                "label": "userAddress",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "finishedRCC",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "pendingRCC",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "stakeAmount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "requests",
+                "type": "t_array(t_struct(Request)4322_storage)dyn_storage",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "31266a9c6cbf294f8dca4e535307230e963125a79f18b50bedc818f3feb6dd6c": {
+      "address": "0x256934A9656185BC4263B60770dA0aEFF978D505",
+      "txHash": "0x05e5f6a8fef42367729ff5dc9bf35dc85cc5828a45da4b35dd3726689bc4e406",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "_roles",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_bytes32,t_struct(RoleData)1309_storage)",
+            "contract": "AccessControl",
+            "src": "@openzeppelin/contracts/access/AccessControl.sol:55"
+          },
+          {
+            "label": "SCH",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_contract(SCToken)5350",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:33"
+          },
+          {
+            "label": "stakeLock",
+            "offset": 20,
+            "slot": "1",
+            "type": "t_bool",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:101"
+          },
+          {
+            "label": "rewardLock",
+            "offset": 21,
+            "slot": "1",
+            "type": "t_bool",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:101"
+          },
+          {
+            "label": "rewardPerBlock",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:103"
+          },
+          {
+            "label": "totalWight",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:105"
+          },
+          {
+            "label": "pools",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_array(t_struct(Pool)4299_storage)dyn_storage",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:105"
+          },
+          {
+            "label": "poolsMapping",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint256,t_struct(Pool)4299_storage)",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:105"
+          },
+          {
+            "label": "usersMapping",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_struct(User)4312_storage))",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:106"
+          },
+          {
+            "label": "existUser",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_bool))",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:108"
+          }
+        ],
+        "types": {
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)80_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_struct(Pool)4299_storage)dyn_storage": {
+            "label": "struct SCHStake.Pool[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Request)4322_storage)dyn_storage": {
+            "label": "struct SCHStake.Request[]",
+            "numberOfBytes": "32"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_contract(SCToken)5350": {
+            "label": "contract SCToken",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(User)4312_storage)": {
+            "label": "mapping(address => struct SCHStake.User)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_struct(RoleData)1309_storage)": {
+            "label": "mapping(bytes32 => struct AccessControl.RoleData)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_bool))": {
+            "label": "mapping(uint256 => mapping(address => bool))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_struct(User)4312_storage))": {
+            "label": "mapping(uint256 => mapping(address => struct SCHStake.User))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Pool)4299_storage)": {
+            "label": "mapping(uint256 => struct SCHStake.Pool)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Pool)4299_storage": {
+            "label": "struct SCHStake.Pool",
+            "members": [
+              {
+                "label": "tokenAddress",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "wight",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "totalStakeAmount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "lastBlockNumber",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "accRCCPerST",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "rccPerST",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "totalReward",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "minStakeAmount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "unStakeLockBlockNumber",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "8"
+              }
+            ],
+            "numberOfBytes": "288"
+          },
+          "t_struct(Request)4322_storage": {
+            "label": "struct SCHStake.Request",
+            "members": [
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "rewardSCH",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "isRewardBlockNumber",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(RoleData)1309_storage": {
+            "label": "struct AccessControl.RoleData",
+            "members": [
+              {
+                "label": "hasRole",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "adminRole",
+                "type": "t_bytes32",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(User)4312_storage": {
+            "label": "struct SCHStake.User",
+            "members": [
+              {
+                "label": "userAddress",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "finishedRCC",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "pendingRCC",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "stakeAmount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "requests",
+                "type": "t_array(t_struct(Request)4322_storage)dyn_storage",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "54ba30841c68f31b9e2747c38ac1ca6adfa0a5f439ca62f99addea9fde94d867": {
+      "address": "0x32aafBBDCb1F830f4E8892f348bcdbf9Ba6A6F9F",
+      "txHash": "0x1825541412e121d458abfda4997eb9f6e1ff06c2425efaa430325335713f33f1",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "_roles",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_bytes32,t_struct(RoleData)1309_storage)",
+            "contract": "AccessControl",
+            "src": "@openzeppelin/contracts/access/AccessControl.sol:55"
+          },
+          {
+            "label": "SCH",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_contract(SCToken)5359",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:33"
+          },
+          {
+            "label": "stakeLock",
+            "offset": 20,
+            "slot": "1",
+            "type": "t_bool",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:101"
+          },
+          {
+            "label": "rewardLock",
+            "offset": 21,
+            "slot": "1",
+            "type": "t_bool",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:101"
+          },
+          {
+            "label": "rewardPerBlock",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:103"
+          },
+          {
+            "label": "totalWight",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:105"
+          },
+          {
+            "label": "pools",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_array(t_struct(Pool)4299_storage)dyn_storage",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:105"
+          },
+          {
+            "label": "poolsMapping",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint256,t_struct(Pool)4299_storage)",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:105"
+          },
+          {
+            "label": "usersMapping",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_struct(User)4312_storage))",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:106"
+          },
+          {
+            "label": "existUser",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_bool))",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:108"
+          }
+        ],
+        "types": {
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)80_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_struct(Pool)4299_storage)dyn_storage": {
+            "label": "struct SCHStake.Pool[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Request)4322_storage)dyn_storage": {
+            "label": "struct SCHStake.Request[]",
+            "numberOfBytes": "32"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_contract(SCToken)5359": {
+            "label": "contract SCToken",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(User)4312_storage)": {
+            "label": "mapping(address => struct SCHStake.User)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_struct(RoleData)1309_storage)": {
+            "label": "mapping(bytes32 => struct AccessControl.RoleData)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_bool))": {
+            "label": "mapping(uint256 => mapping(address => bool))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_struct(User)4312_storage))": {
+            "label": "mapping(uint256 => mapping(address => struct SCHStake.User))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Pool)4299_storage)": {
+            "label": "mapping(uint256 => struct SCHStake.Pool)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Pool)4299_storage": {
+            "label": "struct SCHStake.Pool",
+            "members": [
+              {
+                "label": "tokenAddress",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "wight",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "totalStakeAmount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "lastBlockNumber",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "accRCCPerST",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "rccPerST",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "totalReward",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "minStakeAmount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "unStakeLockBlockNumber",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "8"
+              }
+            ],
+            "numberOfBytes": "288"
+          },
+          "t_struct(Request)4322_storage": {
+            "label": "struct SCHStake.Request",
+            "members": [
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "rewardSCH",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "isRewardBlockNumber",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(RoleData)1309_storage": {
+            "label": "struct AccessControl.RoleData",
+            "members": [
+              {
+                "label": "hasRole",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "adminRole",
+                "type": "t_bytes32",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(User)4312_storage": {
+            "label": "struct SCHStake.User",
+            "members": [
+              {
+                "label": "userAddress",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "finishedRCC",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "pendingRCC",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "stakeAmount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "requests",
+                "type": "t_array(t_struct(Request)4322_storage)dyn_storage",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "28c3426ce1c74ca2282bd1a4a5903c459834c1636e763e664cf01d1e076cfd3b": {
+      "address": "0x91AB421e9664F099F716B6B4fa7195bA4E52aa0c",
+      "txHash": "0x6871ad25687e5cba25abd612966868db02cc2f64477540c7d0d7cd3c6af32493",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "_roles",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_bytes32,t_struct(RoleData)1309_storage)",
+            "contract": "AccessControl",
+            "src": "@openzeppelin/contracts/access/AccessControl.sol:55"
+          },
+          {
+            "label": "SCH",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_contract(SCToken)5375",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:33"
+          },
+          {
+            "label": "stakeLock",
+            "offset": 20,
+            "slot": "1",
+            "type": "t_bool",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:101"
+          },
+          {
+            "label": "rewardLock",
+            "offset": 21,
+            "slot": "1",
+            "type": "t_bool",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:101"
+          },
+          {
+            "label": "rewardPerBlock",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:103"
+          },
+          {
+            "label": "totalWight",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:105"
+          },
+          {
+            "label": "pools",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_array(t_struct(Pool)4299_storage)dyn_storage",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:105"
+          },
+          {
+            "label": "poolsMapping",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint256,t_struct(Pool)4299_storage)",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:105"
+          },
+          {
+            "label": "usersMapping",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_struct(User)4312_storage))",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:106"
+          },
+          {
+            "label": "existUser",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_bool))",
+            "contract": "SCHStake",
+            "src": "contracts/myStake/SCHStake.sol:108"
+          }
+        ],
+        "types": {
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)80_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_struct(Pool)4299_storage)dyn_storage": {
+            "label": "struct SCHStake.Pool[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Request)4322_storage)dyn_storage": {
+            "label": "struct SCHStake.Request[]",
+            "numberOfBytes": "32"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_contract(SCToken)5375": {
+            "label": "contract SCToken",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(User)4312_storage)": {
+            "label": "mapping(address => struct SCHStake.User)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_struct(RoleData)1309_storage)": {
+            "label": "mapping(bytes32 => struct AccessControl.RoleData)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_bool))": {
+            "label": "mapping(uint256 => mapping(address => bool))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_struct(User)4312_storage))": {
+            "label": "mapping(uint256 => mapping(address => struct SCHStake.User))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Pool)4299_storage)": {
+            "label": "mapping(uint256 => struct SCHStake.Pool)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Pool)4299_storage": {
+            "label": "struct SCHStake.Pool",
+            "members": [
+              {
+                "label": "tokenAddress",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "wight",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "totalStakeAmount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "lastBlockNumber",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "accRCCPerST",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "rccPerST",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "totalReward",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "minStakeAmount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "unStakeLockBlockNumber",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "8"
+              }
+            ],
+            "numberOfBytes": "288"
+          },
+          "t_struct(Request)4322_storage": {
+            "label": "struct SCHStake.Request",
+            "members": [
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "rewardSCH",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "isRewardBlockNumber",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(RoleData)1309_storage": {
+            "label": "struct AccessControl.RoleData",
+            "members": [
+              {
+                "label": "hasRole",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "adminRole",
+                "type": "t_bytes32",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(User)4312_storage": {
+            "label": "struct SCHStake.User",
+            "members": [
+              {
+                "label": "userAddress",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "finishedRCC",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "pendingRCC",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "stakeAmount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "requests",
+                "type": "t_array(t_struct(Request)4322_storage)dyn_storage",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        },
+        "namespaces": {
           "erc7201:openzeppelin.storage.Initializable": [
             {
               "contract": "Initializable",
