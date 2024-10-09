@@ -1,13 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-import "@openzeppelin/contracts/proxy/utils/UUPSUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 
-import "@openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol";
-import "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol";
 import "./SCToken.sol";
 
 import "@openzeppelin/contracts/utils/math/Math.sol";
@@ -15,6 +13,7 @@ import "@openzeppelin/contracts/utils/math/Math.sol";
 contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
     using Math for uint256;
     using SafeERC20 for IERC20;
+
     event SCHToken(address schToken);
 
     event RequestStake(address indexed user, uint256 indexed pid, uint256 amount);
@@ -30,6 +29,7 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
     event UpdatePool(Pool pool);
 
     event AddPool(Pool pool);
+
     SCToken public SCH;
 
     // keccak256(abi.encode(uint256(keccak256("SCH.storage.Pausable")) - 1)) & ~bytes32(uint256(0xff))
@@ -47,8 +47,7 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
         uint256 lastBlockNumber;
         //每个质押代币累积的SCH(这只是累加值)
         uint256 accRCCPerST;
-        //每个质押币的奖励数量
-        uint256 rccPerST;
+
         //这个池子的总奖励
         uint256 totalReward;
         //最小质押数量
@@ -96,16 +95,23 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
 
     mapping(uint256 => Pool) poolsMapping;
 
+    mapping(uint256 => address[]) poolUsers;
+
     mapping(uint256 => mapping(address => User)) usersMapping;
 
     mapping(uint256 => mapping(address => bool)) existUser;
+
+    uint256 currentBlockNumber;
 
     bytes32 public constant ADMIN_ROLE = keccak256("ADMIN_ROLE");
 
     function initialize(SCToken _SCH, uint256 _rewardPerBlock) public initializer {
         _grantRole(ADMIN_ROLE, msg.sender);
+        /*这个在升级的时候有用，只能是管理员才能升级*/
+        __UUPSUpgradeable_init();
         setSCH(_SCH);
         rewardPerBlock = _rewardPerBlock;
+        currentBlockNumber = block.number;
         _pause_stake_lock_init();
         _pause_reward_lock_init();
         _pause_init();
@@ -129,34 +135,34 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
     }
 
     /*初始化质押锁*/
-    function _pause_stake_lock_init() internal onlyRole(ADMIN_ROLE){
+    function _pause_stake_lock_init() internal onlyRole(ADMIN_ROLE) {
         stakeLock = false;
     }
 
-    function _stake_lock() internal onlyRole(ADMIN_ROLE){
+    function _stake_lock() internal onlyRole(ADMIN_ROLE) {
         require(stakeLock, "stake lock is already open");
         stakeLock = false;
         emit StakeLock(stakeLock);
     }
 
-    function _stake_unlock() internal onlyRole(ADMIN_ROLE){
+    function _stake_unlock() internal onlyRole(ADMIN_ROLE) {
         require(!stakeLock, "stake lock is already close");
         stakeLock = true;
         emit StakeLock(stakeLock);
     }
 
     /*初始化奖励锁*/
-    function _pause_reward_lock_init() internal onlyRole(ADMIN_ROLE){
+    function _pause_reward_lock_init() internal onlyRole(ADMIN_ROLE) {
         rewardLock = false;
     }
 
-    function _reward_lock() internal onlyRole(ADMIN_ROLE){
+    function _reward_lock() internal onlyRole(ADMIN_ROLE) {
         require(rewardLock, "reward lock is already open");
         rewardLock = false;
         emit RewardLock(stakeLock);
     }
 
-    function _reward_unlock() internal onlyRole(ADMIN_ROLE){
+    function _reward_unlock() internal onlyRole(ADMIN_ROLE) {
         require(!rewardLock, "reward lock is already close");
         rewardLock = true;
         emit RewardLock(stakeLock);
@@ -210,7 +216,6 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
                 lastBlockNumber: block.number,
                 totalReward: 0,
                 accRCCPerST: 0,
-                rccPerST: 0,
                 minStakeAmount: _minStakeAmount,
                 unStakeLockBlockNumber: _unStakeLockBlockNumber
             })
@@ -222,7 +227,8 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
 
     function _updatePools() internal {
         require(pools.length > 0, "current pool not init");
-
+        require(currentBlockNumber < block.number, "it don't need to update reward!");
+        currentBlockNumber = block.number;
         for (uint256 i = 0; i < pools.length; i++) {
             _updatePool(i);
         }
@@ -234,16 +240,30 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
         uint256 poolBlock = pool.lastBlockNumber;
         uint256 weight = pool.wight;
         require(currentBlock > poolBlock, "current pool dont need update");
-        (, uint256 reward) = (currentBlock - poolBlock).tryMul(weight);
-        (, uint256 totalReward) = reward.tryDiv(totalWight);
 
-        pool.totalReward += totalReward;
+        /*这里要先进行奖励，将奖励分配给对应的用户，不应该在解除质押的时候进行奖励统计*/
+        address[] memory usersAddr = poolUsers[_pid];
+
+        if (usersAddr.length > 0) {
+            (, uint256 blockConvert) = (currentBlock - poolBlock).tryMul(10 ** SCH.decimals());
+
+            (, uint256 reward) = blockConvert.tryMul(weight);
+
+            (, uint256 totalReward) = reward.tryDiv(totalWight);
+
+            /*计算一下每个用户获取的奖励数*/
+            for(uint i=0;i<usersAddr.length;i++){
+
+            }
+
+            //这里计算阶段性每个质押币获取的奖励数
+            (, uint256 rewardSCHST) = reward.tryDiv(pool.totalStakeAmount);
+            pool.accRCCPerST += rewardSCHST;
+
+            pool.totalReward += totalReward;
+        }
+
         pool.lastBlockNumber = currentBlock;
-        //这里计算阶段性每个质押币获取的奖励数
-        (, uint256 rewardSCHST) = reward.tryDiv(pool.totalStakeAmount);
-        pool.accRCCPerST += rewardSCHST;
-        (, uint256 perSCHST) = pool.totalReward.tryDiv(pool.totalStakeAmount);
-        pool.rccPerST = perSCHST;
 
         emit UpdatePool(pool);
     }
@@ -271,17 +291,15 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
 
         require(pool.totalStakeAmount >= _amount, "amount error");
 
-        User storage user = usersMapping[_pid][_user];
 
         require(user.stakeAmount >= _amount, "balance not enough");
 
         _updatePool(_pid);
 
-        (, uint256 _pendingRCC) = _amount.tryMul(pool.rccPerST);
-        user.pendingRCC += _pendingRCC;
+        User storage user = usersMapping[_pid][_user];
         /*要放在这前面，不然会有可能会超额进行扣减*/
         user.stakeAmount -= _amount;
-
+        uint256 _pendingRCC = user.pendingRCC;
         user.requests.push(
             Request({
                 amount: _amount,
@@ -356,7 +374,7 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
         require(_amount >= pool.minStakeAmount, "per stake can not lass than minStakeAmount");
 
         /*进行质押币转账*/
-        if(_amount>0){
+        if (_amount > 0) {
             IERC20(pool.tokenAddress).safeTransferFrom(_user, address(this), _amount);
         }
 
@@ -370,6 +388,7 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
             user.finishedRCC = 0;
             user.pendingRCC = 0;
             existUser[_pid][_user] = true;
+            poolUsers[_pid].push(user.userAddress);
         }
 
         pool.totalStakeAmount += _amount;
@@ -407,6 +426,15 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
     returns (uint256)
     {
         return SCH.balanceOf(_user);
+    }
+
+    function getContractBalance(uint256 _pid, address addr) public virtual view returns (uint256) {
+        return IERC20(pools[_pid].tokenAddress).balanceOf(addr);
+    }
+
+    /*更新奖励*/
+    function updateReward() public onlyRole(ADMIN_ROLE) {
+        _updatePools();
     }
 
     modifier checkPid(uint256 _pid) {

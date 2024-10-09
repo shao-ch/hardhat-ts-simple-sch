@@ -23,6 +23,7 @@ Try running some of the following tasks:
     8、solidity-coverage ，这个是solidity代码检查的工具。安装命令： yarn add solidity-coverage --dev，具体细节：https://www.npmjs.com/package/solidity-coverage
     9、安装如下命令，因为coverage需要这些包：npm install --save-dev "@nomicfoundation/hardhat-chai-matchers@^2.0.0" "@nomicfoundation/hardhat-ignition-ethers@^0.15.0" "@nomicfoundation/hardhat-network-helpers@^1.0.0" "@nomicfoundation/hardhat-verify@^2.0.0" "@types/mocha@>=9.1.0" "hardhat-gas-reporter@^1.0.8" "ts-node@>=8.0.0" "typechain@^8.3.0" "typescript@>=4.5.0" 
     10、安装如下命令，不然没办法进行合约升级的部署，npm install --save-dev @openzeppelin/hardhat-upgrades，然后在config.js中配置
+    11、npm install ethers-decode-error --save  //解析合约报错信息
 5、运行命令:
     1、脚本：yarn hardhat run scripts/deploy.ts 或者  npx hardhat run scripts/deploy.ts  --network [name]
     2、编译智能合约命令：npx hardhat compile

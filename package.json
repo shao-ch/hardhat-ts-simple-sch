@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "deploy": "hardhat deploy --network ganache",
-    "test_sctoken": "hardhat test --grep \"SCHStake.*test7\" --network ganache",
+    "test_sctoken": "hardhat test --grep \"SCHStake.*test12\" --network ganache",
     "coverage": "hardhat coverage"
   },
   "author": "",
@@ -41,6 +41,7 @@
     "@typechain/hardhat": "^9.1.0",
     "@types/chai": "^4.3.19",
     "ethers": "^6.1.0",
+    "ethers-decode-error": "^2.1.3",
     "solc": "^0.8.24",
     "undici": "^6.19.8"
   },
