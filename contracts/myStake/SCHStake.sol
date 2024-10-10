@@ -10,6 +10,8 @@ import "./SCToken.sol";
 
 import "@openzeppelin/contracts/utils/math/Math.sol";
 
+    error GetRewardFail(uint256 pid, address user, uint256 rewardSCH);
+
 contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
     using Math for uint256;
     using SafeERC20 for IERC20;
@@ -124,7 +126,7 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
         }
     }
 
-    function getSCTokenAddress() public view returns (address) {
+    function getSCTokenAddress() public view _whenPause returns (address) {
         return address(SCH);
     }
 
@@ -139,13 +141,13 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
         stakeLock = false;
     }
 
-    function _stake_lock() internal onlyRole(ADMIN_ROLE) {
+    function stakeLock() public _whenPause onlyRole(ADMIN_ROLE) {
         require(stakeLock, "stake lock is already open");
         stakeLock = false;
         emit StakeLock(stakeLock);
     }
 
-    function _stake_unlock() internal onlyRole(ADMIN_ROLE) {
+    function stakeUnlock() public _whenPause onlyRole(ADMIN_ROLE) {
         require(!stakeLock, "stake lock is already close");
         stakeLock = true;
         emit StakeLock(stakeLock);
@@ -156,36 +158,36 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
         rewardLock = false;
     }
 
-    function _reward_lock() internal onlyRole(ADMIN_ROLE) {
+    function rewardLock() public _whenPause onlyRole(ADMIN_ROLE) {
         require(rewardLock, "reward lock is already open");
         rewardLock = false;
         emit RewardLock(stakeLock);
     }
 
-    function _reward_unlock() internal onlyRole(ADMIN_ROLE) {
+    function rewardUnlock() public _whenPause onlyRole(ADMIN_ROLE) {
         require(!rewardLock, "reward lock is already close");
         rewardLock = true;
         emit RewardLock(stakeLock);
     }
 
     /*查看质押锁状态*/
-    function getStakeLock() public view returns (bool) {
+    function getStakeLock() public view _whenPause returns (bool) {
         return stakeLock;
     }
 
     /*查看奖励锁状态*/
-    function getRewardLock() public view returns (bool) {
+    function getRewardLock() public view _whenPause returns (bool) {
         return rewardLock;
     }
 
     /*紧急暂停*/
-    function pause() public onlyRole(ADMIN_ROLE) {
+    function pause() public _whenPause onlyRole(ADMIN_ROLE) {
         PauseStorage storage $ = _getPauseStorage();
         $.isPause = true;
     }
 
     /*恢复使用*/
-    function unPause() public onlyRole(ADMIN_ROLE) {
+    function unPause() public _whenPause onlyRole(ADMIN_ROLE) {
         PauseStorage storage $ = _getPauseStorage();
         $.isPause = false;
     }
@@ -202,7 +204,7 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
         uint256 _minStakeAmount,
         bool isUpdatePool,
         uint256 _unStakeLockBlockNumber
-    ) public onlyRole(ADMIN_ROLE) {
+    ) public _whenPause onlyRole(ADMIN_ROLE) {
         if (isUpdatePool) {
             _updatePools();
         }
@@ -252,8 +254,12 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
             (, uint256 totalReward) = reward.tryDiv(totalWight);
 
             /*计算一下每个用户获取的奖励数*/
-            for(uint i=0;i<usersAddr.length;i++){
+            for (uint i = 0; i < usersAddr.length; i++) {
+                User storage user = usersMapping[_pid][usersAddr[i]];
+                (,uint256 tempReward) = totalReward.tryMul(user.stakeAmount);
 
+                (,uint256 userReward) = tempReward.tryDiv(pool.totalReward);
+                user.pendingRCC += userReward;
             }
 
             //这里计算阶段性每个质押币获取的奖励数
@@ -279,7 +285,7 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
         uint256 _pid,
         address _user,
         uint256 _amount
-    ) public checkPid(_pid) checkUser(_user) {
+    ) public _whenPause checkPid(_pid) checkUser(_user) {
         require(_user == msg.sender, "only user can pause stake");
 
         require(_pid <= pools.length, "pid error");
@@ -290,7 +296,6 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
         );
 
         require(pool.totalStakeAmount >= _amount, "amount error");
-
 
         require(user.stakeAmount >= _amount, "balance not enough");
 
@@ -315,6 +320,7 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
     /*这里只能是管理员调用，因为代币都是管理员控制统一进行分配的*/
     function getReward(uint256 _pid, address _user)
     public
+    _whenPause
     checkPid(_pid)
     onlyRole(ADMIN_ROLE)
     _whenRewardUnlock
@@ -348,19 +354,21 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
             _requests[index] = _requests[_requests.length - 1];
             _requests.pop();
         }
-        /*更新用户信息*/
-        user.finishedRCC += sumReward;
-        /*由于已经领取了奖励，所以这里的奖励要进行扣减*/
-        user.pendingRCC -= sumReward;
 
-        pools[_pid].totalStakeAmount -= sumAmount;
-        pools[_pid].totalReward -= sumReward;
-        /*这里暂时不需要更新质押池*/
-        //        _updatePool(_pid);
+        bool success = SCH.transfer(_user, sumReward);
+        if (success) {
+            /*更新用户信息*/
+            user.finishedRCC += sumReward;
+            /*由于已经领取了奖励，所以这里的奖励要进行扣减*/
+            user.pendingRCC -= sumReward;
 
-        SCH.transfer(_user, sumReward);
+            pools[_pid].totalStakeAmount -= sumAmount;
+            pools[_pid].totalReward -= sumReward;
+            emit GetReward(_user, _pid, sumReward);
+        } else {
+            revert GetRewardFail(_pid, _user, sumReward);
+        }
 
-        emit GetReward(_user, _pid, sumReward);
     }
 
     /*用户质押数据*/
@@ -368,7 +376,7 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
         uint256 _pid,
         address _user,
         uint256 _amount
-    ) public checkPid(_pid) checkUser(_user) {
+    ) public _whenPause checkPid(_pid) checkUser(_user) {
         Pool storage pool = pools[_pid];
         /*判断每次质押的币数量是否大于最小质押数量*/
         require(_amount >= pool.minStakeAmount, "per stake can not lass than minStakeAmount");
@@ -403,6 +411,7 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
     function getUserInfo(uint256 _pid, address _user)
     public
     view
+    _whenPause
     checkPid(_pid)
     checkUser(_user)
     returns (User memory)
@@ -422,18 +431,19 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
     function getBalance(address _user)
     public
     view
+    _whenPause
     checkUser(_user)
     returns (uint256)
     {
         return SCH.balanceOf(_user);
     }
 
-    function getContractBalance(uint256 _pid, address addr) public virtual view returns (uint256) {
+    function getContractBalance(uint256 _pid, address addr) public virtual _whenPause view returns (uint256) {
         return IERC20(pools[_pid].tokenAddress).balanceOf(addr);
     }
 
     /*更新奖励*/
-    function updateReward() public onlyRole(ADMIN_ROLE) {
+    function updateReward() public _whenPause  onlyRole(ADMIN_ROLE) {
         _updatePools();
     }
 
@@ -455,5 +465,9 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
     modifier _whenRewardUnlock() {
         require(!rewardLock, "not allow to stake");
         _;
+    }
+
+    modifier _whenPause() {
+        require(_getPauseStorage().isPause, "current contract is pause");
     }
 }
