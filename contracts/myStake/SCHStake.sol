@@ -380,7 +380,7 @@ contract SCHStake is Initializable, UUPSUpgradeable, AccessControl {
         Pool storage pool = pools[_pid];
         /*判断每次质押的币数量是否大于最小质押数量*/
         require(_amount >= pool.minStakeAmount, "per stake can not lass than minStakeAmount");
-
+        
         /*进行质押币转账*/
         if (_amount > 0) {
             IERC20(pool.tokenAddress).safeTransferFrom(_user, address(this), _amount);
